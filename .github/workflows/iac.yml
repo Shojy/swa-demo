@@ -29,5 +29,5 @@ jobs:
           azcliversion: 2.42.0
           inlineScript: |
             az group create -n $ResourceGroup -l $Region
-            az deployment group create --resource-group $ResourceGroup --template-file bicep --parameters name=$SwaName sku=standard
+            az deployment group create --resource-group $ResourceGroup --template-file main.bicep --parameters name=$SwaName sku=standard
             az staticwebapp appsettings set --name $SwaName --resource-group $ResourceGroup --setting-name EnvVarName=${{ secrets.ExampleVar }}
